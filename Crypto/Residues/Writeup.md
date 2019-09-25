@@ -4,7 +4,7 @@ Without the modulus, you can't possibly decrypt my message, right?\
 Files: [chal.py](chal.py)
 
 # Source Code
-Looking at the important parts of `chal.py`:
+The important parts of `chal.py`:
 ```python
 def genrsa(s):
     e = 65537
@@ -24,7 +24,11 @@ def main():
         m = int(raw_input(), 16)
         print "Cipher: " + enc(m, e, n)
 ```
-When `main()` is called, it generates an RSA cipher. It has primes `p < q < 2**1024` with `q - p < 2**512`, and encryption key `e = 2*65537`. Then 6 more custom messages can be encrypted.
+When `main()` is called, it generates an RSA cipher. It has:
+ - Primes `p < q < 2**1024` with `q - p < 2**512`
+ - Encryption key `e = 2*65537`.
+
+Then 6 more custom messages can be encrypted.
 
 # Method
 First, we find `n`. For any message `m` and its cipher `c`, RSA means that `m**e - c` will be a multiple of `n`. Taking the GCD of `m**e - c` for multiple messages, it _should_ be `n` (_most likely_). To avoid possible redundancy, the messages should be coprime, so choose the first 6 primes, 2, 3, 5, 7, 11, and 13.\
