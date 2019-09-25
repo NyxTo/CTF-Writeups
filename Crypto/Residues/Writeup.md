@@ -3,7 +3,7 @@ Without the modulus, you can't possibly decrypt my message, right?\
 `nc challs.hats.sg 1400`\
 Files: [chal.py](chal.py)
 
-# Code
+# Source Code
 Looking at the important parts of `chal.py`:
 ```python
 def genrsa(s):
