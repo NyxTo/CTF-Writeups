@@ -19,7 +19,7 @@ for _ in range(9**2):
 Using a fixed message `m` and encryption key `e = 733`, `data.txt` contains the ciphers `c` for different moduli `n`.
 
 # Method
-We have the residues of a fixed value, `m**e`, across different moduli. The moduli are products of primes less than `2**1024`, so it is unlikely that any of the primes are equal (this should be checked by the challenge setter). This lets us use the [Chinese Remainder Theorem](https://en.wikipedia.org/wiki/Chinese_remainder_theorem#General_case) (CRT) to find `m**e` modulo the product of the moduli. Within CRT, the [Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode) is needed.
+We have the residues of a fixed value, `m**e`, across different moduli. The moduli are products of primes less than `2**1024`, so it is unlikely that any of the primes are equal (this should be checked by the challenge setter). This lets us use the [Chinese Remainder Theorem](https://en.wikipedia.org/wiki/Chinese_remainder_theorem#General_case) (CRT) to find `m**e` modulo the product of all `n`. Within CRT, the [Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode) is needed.
 ```python
 from functools import reduce
 
