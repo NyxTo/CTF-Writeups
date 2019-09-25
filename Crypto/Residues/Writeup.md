@@ -67,7 +67,20 @@ def fermat(n):
             return a-b, a+b
         a += 1
 ```
-As usual, set `phi = (p-1) * (q-1)`. Normally, the [Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode) (refer to the [Broadcast writeup](../Broadcast/Writeup.md#Method) for code) would let us find the decryption key `d` from `e` and `phi`. However, `e` is even and not coprime to `phi`, so this doesn't work. Instead, treat `m**2` as the message, and treat the encryption `m ** (2*65537)` as `(m**2) ** 65537`. Then decrypt as usual to find `flag**2` modulo `n`.
+As usual, set `phi = (p-1) * (q-1)`. Normally, the [Extended Euclidean Algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode) would let us find the decryption key `d` from `e` and `phi`. However, `e` is even and not coprime to `phi`, so this doesn't work. Instead, treat `m**2` as the message, and treat the encryption `m ** (2*65537)` as `(m**2) ** 65537`. Then decrypt as usual to find `flag**2` modulo `n`.
+```python
+def ext_euclid(a, b):
+    c, d, x, y, v = a, b, 0, 1, []
+    while c > 0:
+        v.append(d // c)
+        c, d = d % c, c
+    for i in range(len(v)-1, -1, -1):
+        x, y = y - v[i] * x, x
+    if x < 0:
+        x += b
+        y -= a
+    return x, y
+```
 
 # Solution
 [soln.py](soln.py)
