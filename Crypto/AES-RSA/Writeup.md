@@ -76,7 +76,7 @@ def attack(iv, cipher):
             iv_c_blks[blk-1] = orig_c_blk
     return ''.join(p_blks)
 ```
-Only the RSA is left. After attacking a few times, we realise that the AES-decrypted text (still RSA-encrypted), `flag**3`, is still the same, even for different moduli. This tells us that it is the actual value of `flag**3`, without having to take modulo `n`. We use Newton's method to find the cube root (analogous to [integer square root](https://en.wikipedia.org/wiki/Integer_square_root#Using_only_integer_division) for [Residues](Residues/Writeup.md#Method)). The value of `flag**3` is roughly `2**474`, so set the initial estimate to r = 2**158`.
+Only the RSA is left. After attacking a few times, we realise that the AES-decrypted text (still RSA-encrypted), `flag**3`, is still the same, even for different moduli. This tells us that it is the actual value of `flag**3` (after unpadding), without having to take modulo `n`. We use Newton's method to find the cube root (analogous to [integer square root](https://en.wikipedia.org/wiki/Integer_square_root#Using_only_integer_division) for [Residues](Residues/Writeup.md#Method)). The value of `flag**3` is roughly `2**474`, so set the initial estimate to r = 2**158`.
 
 # Solution
 [soln.py](soln.py)
@@ -86,9 +86,9 @@ from pwn import *
 con = remote('challs.hats.sg', 1401)
 cflag = con.recvlines(5)[3].decode('hex')
 iv, cipher = cflag[:16], cflag[16:]
-flag3 = attack(iv, cipher).encode('hex') # 05c18ed821a2930f6284119af9122dad7ebbe709e5b1580983fbb0edc0b558fb309e9a02618621c4fe9399df6b866973cd1034dcfcd4140f5c0c0965
+flag3 = attack(iv, cipher).encode('hex') # 05c18ed821a2930f6284119af9122dad7ebbe709e5b1580983fbb0edc0b558fb309e9a02618621c4fe9399df6b866973cd1034dcfcd4140f5c0c096504040404
 
-flag3 = int(flag3, 16)
+flag3 = int(flag3[:-8], 16)
 print len(bin(flag3)[2:]) # 475
 r = 2**158
 while r**3 != flag3:
