@@ -4,7 +4,7 @@ Without the modulus, you can't possibly decrypt my message, right?\
 Files: [chal.py](chal.py)
 
 # Source Code
-The important parts of `chal.py`:
+Important parts of `chal.py`:
 ```python
 def genrsa(s):
     e = 65537
