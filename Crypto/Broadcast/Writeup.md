@@ -11,9 +11,8 @@ def genrsa(m, e, s):
     return pow(m, e, n), n
 
 e = 733
-m = int(flag.encode('hex'), 16)
 for _ in range(9**2):
-    c, n = genrsa(m, e, 1024)
+    c, n = genrsa(flag, e, 1024)
     dataf.write("%d\n%d\n\n" % (c, n))
 ```
 Using a fixed message `m` and encryption key `e = 733`, `data.txt` contains the ciphers `c` for different moduli `n`.
@@ -79,4 +78,4 @@ while flag_min < flag_max:
         print hex(mid)[2:].decode('hex') # HATS{3xp0n3n7_700_5m41l!!!}
         break
 ```
-We see that `flag733` (47259 digits) is much smaller than `prod` (49685 digits), so it is on the right track. At the end of the search, the flag is printed: `HATS{3xp0n3n7_700_5m41l!!!}`.
+We see that `flag733` (47259 digits) is much smaller than `prod` (49685 digits), so it is on the right track. At the end of the search, we decode the flag through hex: `HATS{3xp0n3n7_700_5m41l!!!}`.
