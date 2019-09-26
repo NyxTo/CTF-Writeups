@@ -107,4 +107,4 @@ print flag2 # 478957087363456037309930278737923313108398891227964377734057688873
 
 print hex(isqrt(flag2))[2:].decode('hex') # HATS{50m3_r351du3_l3f7}
 ```
-Notice that `flag2` is much smaller than `n`, which indicates it is the actual value of `flag**2`, without needing to take modulo `n`. Finally, take the square root to get the flag: `HATS{50m3_r351du3_l3f7}`.
+Notice that `flag2` is much smaller than `n`, which indicates it is the actual value of `flag**2`, without needing to take modulo `n`. Finally, take the square root and decode through hex to get the flag: `HATS{50m3_r351du3_l3f7}`.
