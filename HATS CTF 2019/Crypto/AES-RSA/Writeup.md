@@ -93,6 +93,6 @@ print len(bin(flag3)[2:]) # 475
 r = 2**158
 while r**3 != flag3:
     r = (r*2 + flag3//(r*r)) // 3
-print hex(r)[2:].decode('hex') # HATS{f14g_t00_sh0rt}
+print hex(r)[2:].decode('hex')
 ```
-Decoding the cube root through hex gives the flag: `HATS{f14g_t00_sh0rt}`.
+> `HATS{f14g_t00_sh0rt}`
