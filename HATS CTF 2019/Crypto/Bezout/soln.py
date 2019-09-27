@@ -30,4 +30,4 @@ for i in range(20):
         c[i], _, _ = ext_euclid(c[i], n)
     m = m * pow(c[i], abs(d[i]), n) % n
 
-print hex(m)[2:].decode('hex')
+print hex(m)[2:].decode('hex') # HATS{m4ny_3xp0n3n75_w17h_6cd_1_15_vuln3r4bl3}
