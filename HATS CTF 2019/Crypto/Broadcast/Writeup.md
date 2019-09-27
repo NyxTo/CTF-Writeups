@@ -78,7 +78,7 @@ while flag_min < flag_max:
         print hex(mid)[2:].decode('hex')
         break
 ```
+We see that `flag733` (47259 digits) is much smaller than `prod` (49685 digits), so it is on the right track.
 > `39248 4e9a9ca877`\
 > `47259 49685`\
-We see that `flag733` (47259 digits) is much smaller than `prod` (49685 digits), so it is on the right track.
 > `HATS{3xp0n3n7_700_5m41l!!!}`.
