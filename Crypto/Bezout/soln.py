@@ -26,7 +26,8 @@ for _ in range(20):
 d = gen_bezout(e)
 m = 1
 for i in range(20):
-    if d[i] < 0: c[i], _, _ = ext_euclid(c[i], n)
+    if d[i] < 0:
+		c[i], _, _ = ext_euclid(c[i], n)
     m = m * pow(c[i], abs(d[i]), n) % n
 
 print hex(m)[2:].decode('hex')
