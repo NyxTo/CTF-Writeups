@@ -10,8 +10,8 @@ n = p * q
 
 ep = [next_prime(randint(1,2**20)) for _ in range(20)]
 em = reduce(lambda x, y: x*y, ep)
-e = [em//p for p in ep]
-c = [pow(flag, k, n) for k in e]
+e = [em//i for i in ep]
+c = [pow(flag, i, n) for i in e]
 
 f.write(str(n) + '\n')
 for i in range(len(e)):
