@@ -63,8 +63,8 @@ for _ in range(81):
     dataf.readline()
 flag733 = crt(c, n)
 
-print len(hex(flag733)[2:]), hex(flag733)[2:12] # 39248 4e9a9ca877
-print len(str(flag733)), len(str(reduce(lambda a, b: a*b, n))) # 47259 49685
+print len(hex(flag733)[2:]), hex(flag733)[2:12]
+print len(str(flag733)), len(str(reduce(lambda a, b: a*b, n)))
 
 flag_min, flag_max = 0x484154537b << 176, 0x484154537c << 176
 while flag_min < flag_max:
@@ -75,7 +75,10 @@ while flag_min < flag_max:
     elif flag733 > mid733:
         flag_min = mid
     else:
-        print hex(mid)[2:].decode('hex') # HATS{3xp0n3n7_700_5m41l!!!}
+        print hex(mid)[2:].decode('hex')
         break
 ```
-We see that `flag733` (47259 digits) is much smaller than `prod` (49685 digits), so it is on the right track. At the end of the search, we decode the flag through hex: `HATS{3xp0n3n7_700_5m41l!!!}`.
+> `39248 4e9a9ca877`\
+> `47259 49685`\
+We see that `flag733` (47259 digits) is much smaller than `prod` (49685 digits), so it is on the right track.
+> `HATS{3xp0n3n7_700_5m41l!!!}`.
