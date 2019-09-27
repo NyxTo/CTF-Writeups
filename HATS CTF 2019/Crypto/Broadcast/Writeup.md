@@ -81,4 +81,4 @@ while flag_min < flag_max:
 We see that `flag733` (47259 digits) is much smaller than `prod` (49685 digits), so it is on the right track.
 > `39248 4e9a9ca877`\
 > `47259 49685`\
-> `HATS{3xp0n3n7_700_5m41l!!!}`.
+> `HATS{3xp0n3n7_700_5m41l!!!}`
