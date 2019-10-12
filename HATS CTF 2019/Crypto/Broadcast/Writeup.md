@@ -75,7 +75,7 @@ while flag_min < flag_max:
     elif flag733 > mid733:
         flag_min = mid
     else:
-        print hex(mid)[2:].decode('hex')
+        print hex(mid)[2:].rstrip('L').decode('hex')
         break
 ```
 We see that `flag733` (47259 digits) is much smaller than `prod` (49685 digits), so it is on the right track.
