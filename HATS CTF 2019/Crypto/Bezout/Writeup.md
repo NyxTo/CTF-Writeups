@@ -52,7 +52,7 @@ For each `c[i]`, compute `c[i] ** d[i] == (m**e[i]) ** d[i] == m ** (e[i]*d[i])`
 
 # Solution
 [soln.py](soln.py)
-```
+```python
 f = open('data.txt', 'r')
 n = int(f.readline())
 e, c = [], []
