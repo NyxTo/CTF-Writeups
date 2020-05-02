@@ -54,3 +54,5 @@ for _ in range(500): # sufficient, usually around 1<<8 == 2**8 == 256
 
 sock.close()
 ```
+
+> `Cyberthon{chat_pwned}`
