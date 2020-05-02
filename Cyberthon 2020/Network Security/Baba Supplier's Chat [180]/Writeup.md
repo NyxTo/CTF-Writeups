@@ -31,7 +31,7 @@ When I combed through to condense what `client.py` _actually_ does, I found out 
 
 The next thing I noticed from running `client.py` was that it receives some English word, sends the numerical `hash()` of the word (as a string), and then received another English word. On the netcat, entering any string other than the `hash()` terminated the connection (with a `"Wrong hash!"` response if I entered a number). Only sending the `hash()` would keep the connection up, and that led to receiving another English word. This piques my curiosity, so I tried again to send the hash, receiving another English word, for a couple more iterations.
 
-From there, what I had to do was clear. Make the client send the `hash()` every time it receives a word, and - hopefully - after enough iterations something would change. To my surprise, what changed was that the flag popped out.
+The client sends `"Hello!"` after receiving the second word, terminating the connection prematurely. From there, what I had to do was clear. Make the client send the `hash()` every time it receives a word, and - hopefully - after enough iterations something would change. To my surprise, what changed was that the flag popped out.
 
 # Solution
 [soln.py](soln.py)
