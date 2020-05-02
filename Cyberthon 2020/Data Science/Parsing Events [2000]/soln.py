@@ -1,4 +1,4 @@
-import re, time as tm
+import re, pandas as pd
 
 logs, qns = open('logs.txt').read().strip().split('\n'), open('questions.txt').read().strip().split('\n')
 
