@@ -48,4 +48,4 @@ for line in qns: # 5000 * 100,000
 				ans.append(sndrs[i])
 				break
 
-pd.DataFrame({'answer':ans}).to_csv('ans.csv', index = False)
+pd.DataFrame({'answer': ans}).to_csv('ans.csv', index = False)
