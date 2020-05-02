@@ -1,1 +1,1 @@
-Cyberthon is an annual local CTF training and competition event, specifically targetted at JC-level Singapore students, organised by HCI, Alt Tab Labs and [CSIT]. Training was held at [https://play.csdc20t.ctf.sg/], and the final competition at [https://play.csdc20f.ctf.sg/].
+Cyberthon is an annual local CTF training and competition event, specifically targetted at JC-level Singapore students, organised by HCI, Alt Tab Labs and [CSIT](https://www.csit.gov.sg/). Training was held at https://play.csdc20t.ctf.sg/, and the final competition at https://play.csdc20f.ctf.sg/.
