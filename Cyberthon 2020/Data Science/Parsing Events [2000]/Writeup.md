@@ -24,7 +24,7 @@ Answer have the format of: a single column CSV file with header `answer`
 Looking at the logs, each line has 4 pieces of information:
  - a message, enclosed in double quotes `"`,
  - a date/time, in the format `YYYY-MM-DD HH:MM:SS` (please tell me you know which `M`s are month and minute),
- - 2 users, a sender and a recipient, both formatted as IPv6 addresses: 8 blocks, of up to 4 hex digits each, delimited by colons `:`.
+ - 2 users, a sender and recipient, both formatted as IPv6 addresses: 8 blocks of up to 4 hex digits each, delimited by colons `:`.
 
 Searching for these patterns in strings are _precisely_ what regular expressions were built for. They give us a shortcut to process and extract the required substrings efficiently, yet also with clear and concise code.
 
