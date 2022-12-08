@@ -2,7 +2,8 @@
 
 We found this encryption algorithm being used after the key exchange. We suspect that it is very weak and can be cracked in a short amount of time. Bonus flag if less than 1000 queries are used.
 
-We are given [crypt_generate.py]:
+### Analysis
+We are given [crypt_generate.py](crypt_generate.py):
 ```py
 import random
 import os
@@ -60,8 +61,8 @@ Given a key `ka<<16|kb`, each call to the `round()` function maps an input pair 
 
 The reason why a Slide attack is much more effective on Feistel ciphers, is because one round keeps half of the message identical. We can encrypt several plaintexts of the form `x<<16 | 1` and `1<<16 | y` (here the value of `1` is an arbitrary but fixed constant). Among these two collections of ciphertexts, if we find one from each where the right half of the first is the same as the left half of the second, we are likely to have found a _slid pair_. The chance of this happening in any two such ciphertexts is 1 in `2**16 == 65536`, and the chance of coincidence among these is a further 1 in `2**16 == 65536`.
 
+### Approach
 ```py
-
 def feistel(l, r, k1, k2, num):
     for _ in range(num):
         val = ((r<<4 ^ r>>12 ^ r>>5 ^ r<<11 ^ k1) + r) & 0xffff ^ (k2 + r + 59278) & 0xffff
